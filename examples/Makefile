@@ -1,10 +1,14 @@
-all: main
+all: vad_base vad_class
 
-CFLAGS += -I../include
+CFLAGS = -I../include
 
-main: main.o
-		g++ -g -O3 $^ -o $@ $(LIBS) -lgfortran -lm -lpthread -ldl
-		rm -f test_vad.o
+vad_base: vad_base.o
+		g++ -g -O3 $^ -o $@
+		rm -f vad_base.o
+
+vad_class: vad_class.o
+		g++ -g -O3 $^ -o $@
+		rm -f vad_class.o
 
 %.o: %.c
 	g++ $(CFLAGS) -c -o $@ $<
