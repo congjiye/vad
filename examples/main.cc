@@ -1,7 +1,8 @@
-#include "vad/vad.hpp"
+#include "webrtc/webrtc.hpp"
 #include <iostream>
 
 using namespace std;
+using namespace webrtc;
 int main() {
     string file_path = "wave_data/wave_1.wav";
     FILE* f;
@@ -30,7 +31,7 @@ int main() {
             printf("0\n");
             break;
         }
-        int ret = WebRtcVad_Process(vad, 16000, reinterpret_cast<int16_t*>(buf), 160, 1);
+        int ret = WebRtcVad_Process(vad, 16000, reinterpret_cast<int16_t*>(buf), 160);
         if (ret == -1) {
             printf("vad process failed");
             break;

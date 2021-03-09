@@ -11,10 +11,11 @@
 进入到 examples 文件夹下，执行 make 即可测试使用。
 
 ```cpp
-#include "vad/vad.hpp"
+#include "webrtc/webrtc.hpp"
 #include <iostream>
 
 using namespace std;
+using namespace webrtc;
 int main() {
     string file_path = "wave_data/wave_1.wav";
     FILE* f;
